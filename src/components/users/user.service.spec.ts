@@ -2,11 +2,11 @@ import { ConfigModule } from '@nestjs/config';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ENVFILE } from '../../constants';
 import { DatabaseModule } from '../database/database.module';
-import { AuthenticationModule } from './authentication.module';
-import { AuthenticationService } from './authentication.service';
+import { UserModule } from './user.module';
+import { UserService } from './user.service';
 
-describe('AuthenticationService', () => {
-    let service: AuthenticationService;
+describe('UserService', () => {
+    let service: UserService;
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
@@ -16,11 +16,11 @@ describe('AuthenticationService', () => {
                     isGlobal: true,
                 }),
                 DatabaseModule,
-                AuthenticationModule,
+                UserModule,
             ],
         }).compile();
 
-        service = module.get<AuthenticationService>(AuthenticationService);
+        service = module.get<UserService>(UserService);
     });
 
     it('should be defined', () => {
