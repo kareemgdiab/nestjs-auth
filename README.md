@@ -1,73 +1,87 @@
+
+# NestJS Auth
+
+<p align="center"><img alt="NestJS Auth" src="https://nestjs.com/img/logo-small.svg"></p>
+
+<p align="center">A NestJS Authentication & Authorization Service.</p>
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+<img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/kareemgdiab/nestjs-auth">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/kareemgdiab/nestjs-auth">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/kareemgdiab/nestjs-auth">
+<img alt="GitHub package.json dynamic" src="https://img.shields.io/github/package-json/keywords/kareemgdiab/nestjs-auth">
+<img alt="GitHub" src="https://img.shields.io/github/license/kareemgdiab/nestjs-auth">
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Features
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- JWT Authentication
+- RBAC
+- Revokable Tokens
+- Auto docs generation
+- Development workflow ([husky](https://typicode.github.io/husky), [commitlint](https://commitlint.js.org/))
 
-## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Documentation
+
+>Documentation is automatically generated using [@compodoc/compodoc](https://compodoc.app/),
+Check out current project documentation on [/nestjs-auth](https://kareemgdiab.github.io/nestjs-auth)
+
+>A Swagger documentation is also automatically generated and can be accessed by running the project and heading to `/api`
+and possibly the openapi specification json file that can be imported in rest clients (eg,. `insomnia`, `postman`) by heading to `/api-json`
+
 
 ## Installation
 
-```bash
-$ npm install
-```
-
-## Running the app
+### Manual
 
 ```bash
-# development
-$ npm run start
+  git clone https://github.com/kareemgdiab/nestjs-auth
+  cd nestjs-auth
+  
+  npm install
 
-# watch mode
-$ npm run start:dev
+  # For development and auto reloading
+  cp .env.example .env.development
+  npm run start:dev
 
-# production mode
-$ npm run start:prod
+  # For production
+  cp .env.example .env.production
+  npm start
 ```
 
-## Test
+### Docker
 
 ```bash
-# unit tests
-$ npm run test
+git clone https://github.com/kareemgdiab/nestjs-auth
+cd nestjs-auth
 
-# e2e tests
-$ npm run test:e2e
+# Pre-defined `.env.docker` file is used to load variables
 
-# test coverage
-$ npm run test:cov
+docker-compose up --build
 ```
+## Environment Variables
 
-## Support
+Environment variables are loaded using `.env` files.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+> By default `.env` is loaded unless you specify which environment file to load based on `NODE_ENV` variable so if `NODE_ENV=development` the env file to be used will be `.env.development`
 
-## Stay in touch
+To run this project, you will need to add the following environment variables to your .env file
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+`DATABASE_URL` - Database Connection String. (eg,. `mongodb://localhost/nestjs-auth`).
+`JWT_SECRET` - A secret string used to sign jwt tokens.
+
+## Enhancements
+
+- List of all available permissions as a lookup
+- Caching frequently used models using redis
+- Unit Tests
+## Authors
+
+- [@kareemgdiab](https://www.github.com/kareemgdiab)
+
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+[MIT](https://choosealicense.com/licenses/mit/)
+
