@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>AppService - base service for the application</p>
+
+            </p>
 
 
 
@@ -79,7 +86,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getHello" >getHello</a>
+                                <a href="#health" >health</a>
                             </li>
                         </ul>
                     </td>
@@ -103,33 +110,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getHello"></a>
+                    <a name="health"></a>
                     <span class="name">
-                        <span ><b>getHello</b></span>
-                        <a href="#getHello"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>health</b></span>
+                        <a href="#health"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getHello()</code>
+<code>health()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="5"
-                            class="link-to-prism">src/app.service.ts:5</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/app.service.ts:12</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Simple up and running responder for the health check endpoint.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>health check response</li>
+</ul>
 
                     </div>
                 </td>
@@ -144,10 +161,17 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
 
+/**
+ * AppService - base service for the application
+ */
 @Injectable()
 export class AppService {
-    getHello(): string {
-        return &#x27;Hello World!&#x27;;
+    /**
+     * Simple up and running responder for the health check endpoint.
+     * @returns {string} - health check response
+     */
+    health(): string {
+        return &#x27;OK&#x27;;
     }
 }
 </code></pre>

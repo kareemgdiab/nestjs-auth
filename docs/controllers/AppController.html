@@ -85,7 +85,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#createItem" >createItem</a>
+                            </li>
+                            <li>
+                                <a href="#getItem" >getItem</a>
+                            </li>
+                            <li>
                                 <a href="#getProfile" >getProfile</a>
+                            </li>
+                            <li>
+                                <a href="#health" >health</a>
                             </li>
                         </ul>
                     </td>
@@ -104,6 +113,98 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createItem"></a>
+                    <span class="name">
+                        <span ><b>createItem</b></span>
+                        <a href="#createItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createItem()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth()<br />@UseGuards(JwtAuthGuard, PermissionsGuard)<br />@Permissions(&#x27;item:create&#x27;)<br />@Post(&#x27;item&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app.controller.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Dummy route to test permissions</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{ created: boolean; }</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItem"></a>
+                    <span class="name">
+                        <span ><b>getItem</b></span>
+                        <a href="#getItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getItem()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth()<br />@UseGuards(JwtAuthGuard, PermissionsGuard)<br />@Permissions(&#x27;item:read&#x27;)<br />@Get(&#x27;item&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app.controller.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Dummy route to test permissions</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{ name: string; }</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -131,8 +232,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app.controller.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app.controller.ts:23</a></div>
                 </td>
             </tr>
 
@@ -168,7 +269,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>literal type</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -178,12 +279,59 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="health"></a>
+                    <span class="name">
+                        <span ><b>health</b></span>
+                        <a href="#health"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>health()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;health&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app.controller.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Health check endpoint.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, Request, UseGuards } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, Post, Request, UseGuards } from &#x27;@nestjs/common&#x27;;
 import { ApiBearerAuth, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { AppService } from &#x27;./app.service&#x27;;
 import { JwtAuthGuard } from &#x27;./components/authentication/jwt.guard&#x27;;
 import { Permissions } from &#x27;./decorators/permissions.decorator&#x27;;
 import { PermissionsGuard } from &#x27;./guards/permissions.guard&#x27;;
@@ -194,6 +342,8 @@ import { PermissionsGuard } from &#x27;./guards/permissions.guard&#x27;;
 @ApiTags(&#x27;Me&#x27;)
 @Controller()
 export class AppController {
+    constructor(private readonly appService: AppService) {}
+
     /**
      * A simple endpoint to test the auth service.
      */
@@ -201,8 +351,38 @@ export class AppController {
     @UseGuards(JwtAuthGuard, PermissionsGuard)
     @Permissions(&#x27;profile:read&#x27;)
     @Get(&#x27;profile&#x27;)
-    getProfile(@Request() req): { email: string } {
+    getProfile(@Request() req) {
         return req.user;
+    }
+
+    /**
+     * Dummy route to test permissions
+     */
+    @ApiBearerAuth()
+    @UseGuards(JwtAuthGuard, PermissionsGuard)
+    @Permissions(&#x27;item:read&#x27;)
+    @Get(&#x27;item&#x27;)
+    getItem() {
+        return { name: &#x27;test-item&#x27; };
+    }
+
+    /**
+     * Dummy route to test permissions
+     */
+    @ApiBearerAuth()
+    @UseGuards(JwtAuthGuard, PermissionsGuard)
+    @Permissions(&#x27;item:create&#x27;)
+    @Post(&#x27;item&#x27;)
+    createItem() {
+        return { created: true };
+    }
+
+    /**
+     * Health check endpoint.
+     */
+    @Get(&#x27;health&#x27;)
+    health(): string {
+        return this.appService.health();
     }
 }
 </code></pre>

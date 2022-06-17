@@ -254,12 +254,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module } from &#x27;@nestjs/common&#x27;;
+import { ConfigModule, ConfigService } from &#x27;@nestjs/config&#x27;;
 import { JwtModule } from &#x27;@nestjs/jwt&#x27;;
 import { PassportModule } from &#x27;@nestjs/passport&#x27;;
+import { EnvKeys } from &#x27;../../constants&#x27;;
 import { RefreshTokenModule } from &#x27;../refreshTokens/refreshToken.module&#x27;;
 import { RoleModule } from &#x27;../role/role.module&#x27;;
 import { UserModule } from &#x27;../users/user.module&#x27;;
-import { jwtConstants } from &#x27;./authentication.constants&#x27;;
 import { AuthenticationController } from &#x27;./authentication.controller&#x27;;
 import { AuthenticationService } from &#x27;./authentication.service&#x27;;
 import { JwtStrategy } from &#x27;./jwt.strategy&#x27;;
@@ -271,9 +272,13 @@ import { LocalStrategy } from &#x27;./local.strategy&#x27;;
         RoleModule,
         RefreshTokenModule,
         PassportModule,
-        JwtModule.register({
-            secret: jwtConstants.secret,
-            signOptions: { expiresIn: &#x27;60s&#x27; },
+        JwtModule.registerAsync({
+            imports: [ConfigModule],
+            useFactory: async (config: ConfigService) &#x3D;&gt; ({
+                secret: config.get(EnvKeys.JWT_SECRET),
+                signOptions: { expiresIn: &#x27;60s&#x27; },
+            }),
+            inject: [ConfigService],
         }),
     ],
     controllers: [AuthenticationController],
