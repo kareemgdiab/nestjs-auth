@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthenticationModule } from './components/authentication/authentication.module';
 import { DatabaseModule } from './components/database/database.module';
+import { RoleModule } from './components/role/role.module';
 import { UserModule } from './components/users/user.module';
 import { ENVFILE } from './constants';
 
@@ -16,6 +17,7 @@ import { ENVFILE } from './constants';
         DatabaseModule,
         AuthenticationModule,
         UserModule,
+        RoleModule,
     ],
     controllers: [AppController],
     providers: [AppService],

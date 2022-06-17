@@ -10,6 +10,10 @@ export class UserService {
         @InjectModel(User.name) private userModel: Model<UserDocument>,
     ) {}
 
+    async find(filter: FilterQuery<UserDocument>): Promise<UserDocument[]> {
+        return this.userModel.find(filter);
+    }
+
     async findOne(
         filter: FilterQuery<UserDocument>,
     ): Promise<UserDocument | undefined> {
@@ -18,5 +22,9 @@ export class UserService {
 
     async create(user: CreateUserDto): Promise<UserDocument> {
         return this.userModel.create(user);
+    }
+
+    async delete(id: string): Promise<any> {
+        return this.userModel.deleteOne({ _id: id });
     }
 }

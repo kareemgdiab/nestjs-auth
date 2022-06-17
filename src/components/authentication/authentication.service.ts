@@ -7,6 +7,7 @@ import { JwtService } from '@nestjs/jwt';
 import { compare, hash } from 'bcrypt';
 import { RefreshTokenDocument } from '../refreshTokens/refreshToken.schema';
 import { RefreshTokenService } from '../refreshTokens/refreshToken.service';
+import { RoleService } from '../role/role.service';
 import { CreateUserDto } from '../users/dto/user.dto';
 import { UserDocument } from '../users/user.schema';
 import { UserService } from '../users/user.service';
@@ -18,6 +19,7 @@ export class AuthenticationService {
     constructor(
         private userService: UserService,
         private refreshTokenService: RefreshTokenService,
+        private roleService: RoleService,
         private jwtService: JwtService,
     ) {}
 
@@ -74,10 +76,16 @@ export class AuthenticationService {
     }
 
     async register(user: CreateUserDto) {
+        const role = await this.roleService.findOne({ _id: user.role });
+        if (role == null) {
+            throw new NotFoundException('Role does not exist!');
+        }
+
         const nUser = await this.userService.create({
             email: user.email,
             password: await hash(user.password, 10),
             name: user.name,
+            role: user.role,
         });
 
         const nRefreshToken = await this.refreshTokenService.create(
@@ -148,6 +156,7 @@ export class AuthenticationService {
             email: user.email,
             sub: user._id,
             tokenId: token._id,
+            role: user.role,
         };
         return this.jwtService.sign(payload, { expiresIn: '15m' });
     }
