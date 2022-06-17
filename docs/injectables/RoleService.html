@@ -40,7 +40,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >UserService</li>
+  <li >RoleService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,7 +58,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/components/users/user.service.ts</code>
+            <code>src/components/role/role.service.ts</code>
         </p>
 
 
@@ -94,6 +94,10 @@
                                     <span class="modifier">Async</span>
                                 <a href="#findOne" >findOne</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -112,12 +116,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userModel: <a href="../classes/User.html" target="_self">Model&lt;UserDocument&gt;</a>)</code>
+<code>constructor(roleModel: <a href="../classes/Role.html" target="_self">Model&lt;RoleDocument&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/components/users/user.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/components/role/role.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -135,10 +139,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>userModel</td>
+                                                        <td>roleModel</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/User.html" target="_self" >Model&lt;UserDocument&gt;</a></code>
+                                                                        <code><a href="../classes/Role.html" target="_self" >Model&lt;RoleDocument&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -175,7 +179,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(user: <a href="../classes/CreateUserDto.html" target="_self">CreateUserDto</a>)</code>
+                    <code>create(role: <a href="../classes/CreateRoleDto.html" target="_self">CreateRoleDto</a>)</code>
                 </td>
             </tr>
 
@@ -183,7 +187,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/components/users/user.service.ts:23</a></div>
+                            class="link-to-prism">src/components/role/role.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -204,9 +208,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>user</td>
+                                    <td>role</td>
                                     <td>
-                                                <code><a href="../classes/CreateUserDto.html" target="_self" >CreateUserDto</a></code>
+                                                <code><a href="../classes/CreateRoleDto.html" target="_self" >CreateRoleDto</a></code>
                                     </td>
 
                                     <td>
@@ -221,7 +225,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Promise&lt;UserDocument&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Role.html" target="_self" >Promise&lt;RoleDocument&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -253,8 +257,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/components/users/user.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/components/role/role.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -317,7 +321,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>find(filter: <a href="../classes/User.html" target="_self">FilterQuery&lt;UserDocument&gt;</a>)</code>
+                    <code>find(filter: <a href="../classes/Role.html" target="_self">FilterQuery&lt;RoleDocument&gt;</a>)</code>
                 </td>
             </tr>
 
@@ -325,7 +329,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/components/users/user.service.ts:13</a></div>
+                            class="link-to-prism">src/components/role/role.service.ts:13</a></div>
                 </td>
             </tr>
 
@@ -348,7 +352,7 @@
                                 <tr>
                                     <td>filter</td>
                                     <td>
-                                                <code><a href="../classes/User.html" target="_self" >FilterQuery&lt;UserDocument&gt;</a></code>
+                                                <code><a href="../classes/Role.html" target="_self" >FilterQuery&lt;RoleDocument&gt;</a></code>
                                     </td>
 
                                     <td>
@@ -363,7 +367,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Promise&lt;UserDocument[]&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Role.html" target="_self" >Promise&lt;RoleDocument[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -388,7 +392,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findOne(filter: <a href="../classes/User.html" target="_self">FilterQuery&lt;UserDocument&gt;</a>)</code>
+                    <code>findOne(filter: <a href="../classes/Role.html" target="_self">FilterQuery&lt;RoleDocument&gt;</a>)</code>
                 </td>
             </tr>
 
@@ -396,7 +400,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/components/users/user.service.ts:17</a></div>
+                            class="link-to-prism">src/components/role/role.service.ts:17</a></div>
                 </td>
             </tr>
 
@@ -419,7 +423,7 @@
                                 <tr>
                                     <td>filter</td>
                                     <td>
-                                                <code><a href="../classes/User.html" target="_self" >FilterQuery&lt;UserDocument&gt;</a></code>
+                                                <code><a href="../classes/Role.html" target="_self" >FilterQuery&lt;RoleDocument&gt;</a></code>
                                     </td>
 
                                     <td>
@@ -434,7 +438,90 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Promise&lt;UserDocument | undefined&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Role.html" target="_self" >Promise&lt;RoleDocument | undefined&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, role: <a href="../classes/CreateRoleDto.html" target="_self">CreateRoleDto</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/components/role/role.service.ts:27</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>role</td>
+                                    <td>
+                                                <code><a href="../classes/CreateRoleDto.html" target="_self" >CreateRoleDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;UpdateWriteOpResult&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -452,32 +539,41 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
 import { InjectModel } from &#x27;@nestjs/mongoose&#x27;;
-import { FilterQuery, Model } from &#x27;mongoose&#x27;;
-import { CreateUserDto } from &#x27;./dto/user.dto&#x27;;
-import { User, UserDocument } from &#x27;./user.schema&#x27;;
+import { FilterQuery, Model, UpdateWriteOpResult } from &#x27;mongoose&#x27;;
+import { CreateRoleDto } from &#x27;./dto/role.dto&#x27;;
+import { Role, RoleDocument } from &#x27;./role.schema&#x27;;
 
 @Injectable()
-export class UserService {
+export class RoleService {
     constructor(
-        @InjectModel(User.name) private userModel: Model&lt;UserDocument&gt;,
+        @InjectModel(Role.name) private roleModel: Model&lt;RoleDocument&gt;,
     ) {}
 
-    async find(filter: FilterQuery&lt;UserDocument&gt;): Promise&lt;UserDocument[]&gt; {
-        return this.userModel.find(filter);
+    async find(filter: FilterQuery&lt;RoleDocument&gt;): Promise&lt;RoleDocument[]&gt; {
+        return this.roleModel.find(filter);
     }
 
     async findOne(
-        filter: FilterQuery&lt;UserDocument&gt;,
-    ): Promise&lt;UserDocument | undefined&gt; {
-        return this.userModel.findOne(filter);
+        filter: FilterQuery&lt;RoleDocument&gt;,
+    ): Promise&lt;RoleDocument | undefined&gt; {
+        return this.roleModel.findOne(filter);
     }
 
-    async create(user: CreateUserDto): Promise&lt;UserDocument&gt; {
-        return this.userModel.create(user);
+    async create(role: CreateRoleDto): Promise&lt;RoleDocument&gt; {
+        return this.roleModel.create(role);
+    }
+
+    async update(
+        id: string,
+        role: CreateRoleDto,
+    ): Promise&lt;UpdateWriteOpResult&gt; {
+        return this.roleModel.updateOne({ _id: id }, role, {
+            returnDocument: &#x27;after&#x27;,
+        });
     }
 
     async delete(id: string): Promise&lt;any&gt; {
-        return this.userModel.deleteOne({ _id: id });
+        return this.roleModel.deleteOne({ _id: id });
     }
 }
 </code></pre>
@@ -523,7 +619,7 @@ export class UserService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'RoleService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

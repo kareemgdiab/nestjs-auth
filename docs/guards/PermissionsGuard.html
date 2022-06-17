@@ -28,16 +28,21 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content controller">
+               <div class="content guard">
                    <div class="content-data">
 
 
 
 
 
+
+
+
+
+
 <ol class="breadcrumb">
-  <li>Controllers</li>
-  <li >AppController</li>
+    <li>Guards</li>
+    <li >PermissionsGuard</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -50,28 +55,20 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-        <p class="comment">
+        <div class="tab-pane fade active in" id="c-info">
+            <p class="comment">
             <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/app.controller.ts</code>
-        </p>
-
-
-
-            <p class="comment">
-                <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>AppController - base controller for the application</p>
-
+                <code>src/guards/permissions.guard.ts</code>
             </p>
 
 
 
 
-            <section>
+
+
+                <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -85,7 +82,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getProfile" >getProfile</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#canActivate" >canActivate</a>
                             </li>
                         </ul>
                     </td>
@@ -99,7 +97,68 @@
     </table>
 </section>
 
-            <section>
+                <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(reflector: Reflector, roleService: <a href="../injectables/RoleService.html" target="_self">RoleService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/guards/permissions.guard.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reflector</td>
+                                                  
+                                                        <td>
+                                                                    <code>Reflector</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>roleService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RoleService.html" target="_self" >RoleService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+                <section>
     
     <h3 id="methods">
         Methods
@@ -108,39 +167,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getProfile"></a>
+                    <a name="canActivate"></a>
                     <span class="name">
-                        <span ><b>getProfile</b></span>
-                        <a href="#getProfile"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Async</span>
+                        <span ><b>canActivate</b></span>
+                        <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getProfile(req)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@ApiBearerAuth()<br />@UseGuards(JwtAuthGuard, PermissionsGuard)<br />@Permissions(&#x27;profile:read&#x27;)<br />@Get(&#x27;profile&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app.controller.ts:20</a></div>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>canActivate(context: ExecutionContext)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>A simple endpoint to test the auth service.</p>
-</div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/guards/permissions.guard.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -149,12 +201,16 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>req</td>
+                                    <td>context</td>
+                                    <td>
+                                            <code>ExecutionContext</code>
+                                    </td>
 
                                     <td>
                                         No
@@ -168,7 +224,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>literal type</code>
+                        <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -178,41 +234,55 @@
             </tr>
         </tbody>
     </table>
-</section>    </div>
+</section>
+        </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, Request, UseGuards } from &#x27;@nestjs/common&#x27;;
-import { ApiBearerAuth, ApiTags } from &#x27;@nestjs/swagger&#x27;;
-import { JwtAuthGuard } from &#x27;./components/authentication/jwt.guard&#x27;;
-import { Permissions } from &#x27;./decorators/permissions.decorator&#x27;;
-import { PermissionsGuard } from &#x27;./guards/permissions.guard&#x27;;
+        <div class="tab-pane fade  tab-source-code" id="c-source">
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    CanActivate,
+    ExecutionContext,
+    Injectable,
+    NotFoundException,
+} from &#x27;@nestjs/common&#x27;;
+import { Reflector } from &#x27;@nestjs/core&#x27;;
+import { Request } from &#x27;express&#x27;;
+import { RoleService } from &#x27;../components/role/role.service&#x27;;
 
-/**
- * AppController - base controller for the application
- */
-@ApiTags(&#x27;Me&#x27;)
-@Controller()
-export class AppController {
-    /**
-     * A simple endpoint to test the auth service.
-     */
-    @ApiBearerAuth()
-    @UseGuards(JwtAuthGuard, PermissionsGuard)
-    @Permissions(&#x27;profile:read&#x27;)
-    @Get(&#x27;profile&#x27;)
-    getProfile(@Request() req): { email: string } {
-        return req.user;
+@Injectable()
+export class PermissionsGuard implements CanActivate {
+    constructor(
+        private readonly reflector: Reflector,
+        private readonly roleService: RoleService,
+    ) {}
+
+    async canActivate(context: ExecutionContext): Promise&lt;boolean&gt; {
+        const routePermissions &#x3D; this.reflector.get&lt;string[]&gt;(
+            &#x27;permissions&#x27;,
+            context.getHandler(),
+        );
+
+        if (!routePermissions) {
+            return true;
+        }
+
+        const request: Request &#x3D; context.getArgByIndex(0);
+
+        const role &#x3D; await this.roleService.findOne({ _id: request.user.role });
+        if (role &#x3D;&#x3D; null) {
+            throw new NotFoundException(&#x27;Role not found&#x27;);
+        }
+
+        const hasPermission &#x3D; routePermissions.every((routePermission) &#x3D;&gt;
+            role.permissions.includes(routePermission),
+        );
+
+        return hasPermission;
     }
 }
 </code></pre>
-    </div>
+        </div>
 </div>
-
-
-
-
-
 
 
 
@@ -249,8 +319,8 @@ export class AppController {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppController.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
+            var COMPODOC_CURRENT_PAGE_URL = 'PermissionsGuard.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

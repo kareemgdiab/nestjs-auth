@@ -37,7 +37,7 @@
 
 <ol class="breadcrumb">
   <li>Controllers</li>
-  <li >AppController</li>
+  <li >UserController</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -55,18 +55,17 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app.controller.ts</code>
+            <code>src/components/users/user.controller.ts</code>
         </p>
 
-
-
             <p class="comment">
-                <h3>Description</h3>
+                <h3>Prefix</h3>
             </p>
             <p class="comment">
-                <p>AppController - base controller for the application</p>
-
+                <code>users</code>
             </p>
+
+
 
 
 
@@ -85,7 +84,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getProfile" >getProfile</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#find" >find</a>
                             </li>
                         </ul>
                     </td>
@@ -108,16 +112,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getProfile"></a>
+                    <a name="delete"></a>
                     <span class="name">
-                        <span ><b>getProfile</b></span>
-                        <a href="#getProfile"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Async</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getProfile(req)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -125,22 +131,20 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@ApiBearerAuth()<br />@UseGuards(JwtAuthGuard, PermissionsGuard)<br />@Permissions(&#x27;profile:read&#x27;)<br />@Get(&#x27;profile&#x27;)<br /></code>
+                    <code>@UseGuards(JwtAuthGuard, PermissionsGuard)<br />@Permissions(&#x27;user:delete&#x27;)<br />@Delete(&#x27;/:id&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app.controller.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/components/users/user.controller.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>A simple endpoint to test the auth service.</p>
-</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -149,12 +153,16 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>req</td>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
                                     <td>
                                         No
@@ -168,7 +176,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>literal type</code>
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -178,31 +186,90 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="find"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>find</b></span>
+                        <a href="#find"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>find()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@UseGuards(JwtAuthGuard, PermissionsGuard)<br />@Permissions(&#x27;user:read&#x27;)<br />@Get()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/components/users/user.controller.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Promise&lt;UserDocument[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, Request, UseGuards } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Delete, Get, Param, UseGuards } from &#x27;@nestjs/common&#x27;;
 import { ApiBearerAuth, ApiTags } from &#x27;@nestjs/swagger&#x27;;
-import { JwtAuthGuard } from &#x27;./components/authentication/jwt.guard&#x27;;
-import { Permissions } from &#x27;./decorators/permissions.decorator&#x27;;
-import { PermissionsGuard } from &#x27;./guards/permissions.guard&#x27;;
+import { Permissions } from &#x27;../../decorators/permissions.decorator&#x27;;
+import { PermissionsGuard } from &#x27;../../guards/permissions.guard&#x27;;
+import { JwtAuthGuard } from &#x27;../authentication/jwt.guard&#x27;;
+import { UserDocument } from &#x27;./user.schema&#x27;;
+import { UserService } from &#x27;./user.service&#x27;;
 
-/**
- * AppController - base controller for the application
- */
-@ApiTags(&#x27;Me&#x27;)
-@Controller()
-export class AppController {
+@ApiTags(&#x27;Users&#x27;)
+@ApiBearerAuth()
+@Controller(&#x27;users&#x27;)
+export class UserController {
+    constructor(private readonly userService: UserService) {}
+
     /**
-     * A simple endpoint to test the auth service.
+     * @permissions &#x60;user:read&#x60;
+     * @description Returns all users with their permissions
      */
-    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard, PermissionsGuard)
-    @Permissions(&#x27;profile:read&#x27;)
-    @Get(&#x27;profile&#x27;)
-    getProfile(@Request() req): { email: string } {
-        return req.user;
+    @Permissions(&#x27;user:read&#x27;)
+    @Get()
+    async find(): Promise&lt;UserDocument[]&gt; {
+        return this.userService.find({});
+    }
+
+    /**
+     * @permissions &#x60;user:delete&#x60;
+     * @description Deletes user
+     */
+    @UseGuards(JwtAuthGuard, PermissionsGuard)
+    @Permissions(&#x27;user:delete&#x27;)
+    @Delete(&#x27;/:id&#x27;)
+    async delete(@Param(&#x27;id&#x27;) id: string): Promise&lt;any&gt; {
+        return this.userService.delete(id);
     }
 }
 </code></pre>
@@ -250,7 +317,7 @@ export class AppController {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppController.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserController.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
