@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/kareemgdiab/nestjs-auth/compare/v0.0.2...v0.0.3) (2022-06-17)
+
+
+### Features
+
+* roles & permissions ([c103a57](https://github.com/kareemgdiab/nestjs-auth/commit/c103a574bbc4a85821ac8ecd86ce7ae594b91109))
+* test release cmd ([7788688](https://github.com/kareemgdiab/nestjs-auth/commit/7788688b7da2d00612c02d2873935f5ebf2f4e58))
+
 ### 0.0.2 (2022-06-15)
 
 
